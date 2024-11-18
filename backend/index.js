@@ -16,4 +16,4 @@ app.use(express.json());
 // Use the routes for todos
 app.use('/api/todos', todoManupulation);
 
-module.exports = app;
+module.exports = {app};
