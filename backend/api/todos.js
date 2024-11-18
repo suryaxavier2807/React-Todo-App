@@ -26,6 +26,8 @@ router.post("/createTodoInDb", async (req, res) => {
 router.get('/getAllTodos', async (req, res) => {
 
     const todoSchema = schemas.Todos
+
+   
     const getTodos = await todoSchema.find({isActive:1} )
 
     if (getTodos.length > 0) {

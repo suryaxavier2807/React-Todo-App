@@ -12,10 +12,11 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'] 
 };
 
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
 // Use the routes for todos
-app.use('/todos', todoManupulation);
+app.use('/api/todos', todoManupulation);
 
-module.exports = app
+module.exports = app;
