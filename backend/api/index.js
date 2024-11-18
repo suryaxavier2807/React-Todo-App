@@ -1,3 +1,5 @@
+console.log("Vercel API is triggered");
+
 const express = require('express')
 const app = express()
 const todoManupulation = require('./todos')
