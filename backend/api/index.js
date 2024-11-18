@@ -1,24 +1,19 @@
-console.log("Vercel API is triggered");
-
-const express = require('express')
-const app = express()
-const todoManupulation = require('./todos')
+const express = require('express');
+const app = express();
+const todoManupulation = require('./todos'); // Import your routes
 const cors = require('cors');
 
-
+// CORS configuration
 const corsOptions = {
-    origin: "*" ,
-    methods: 'GET,POST', 
-    allowedHeaders: ['Content-Type', 'Authorization'] 
+  origin: "*", 
+  methods: 'GET,POST', 
+  allowedHeaders: ['Content-Type', 'Authorization'] 
 };
 
-
 app.use(cors(corsOptions));
+app.use(express.json());
 
-
-
-app.use(express.json())
-
-app.use('/api/todos',todoManupulation)
+// Use the routes for todos
+app.use('/api/todos', todoManupulation);
 
 module.exports = app;
