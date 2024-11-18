@@ -1,3 +1,5 @@
+console.log("api triggered successfully");
+
 const express = require('express');
 const app = express();
 const todoManupulation = require('./todos'); // Import your routes
