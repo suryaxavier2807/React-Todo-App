@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const schemas = require('./db/index')
+const schemas = require('./db')
 
 
 
