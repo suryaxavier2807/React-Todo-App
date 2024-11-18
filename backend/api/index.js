@@ -16,6 +16,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Use the routes for todos
-app.use('/api/todos', todoManupulation);
+app.use('/todos', todoManupulation);
 
-module.exports = app;
+module.exports = app
