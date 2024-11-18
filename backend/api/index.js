@@ -1,13 +1,8 @@
 const express = require('express')
 const app = express()
-const port = 8081
 const todoManupulation = require('./todos')
 const cors = require('cors');
 
-app.listen(port,()=>{
-    console.log(`Server is running at ${port}`);
-    
-})
 
 const corsOptions = {
     origin: "*" ,
@@ -22,6 +17,6 @@ app.use(cors(corsOptions));
 
 app.use(express.json())
 
-app.use('/todos',todoManupulation)
+app.use('/api/todos',todoManupulation)
 
-module.exports = app
+module.exports = app;
