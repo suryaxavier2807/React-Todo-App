@@ -18,7 +18,7 @@ function ViewTodos() {
 
             try {
                 const getTodos = await axios({
-                    url: "http://localhost:8081/todos/getAllTodos",
+                    url: "https://react-todo-app-wmcb.vercel.app/api/todos/getAllTodos",
                     method: "GET"
                 })
                 if(getTodos.data.todos){
@@ -63,7 +63,7 @@ function ViewTodos() {
         
         
         const deleteTodo = await axios({
-            url:"http://localhost:8081/todos/deleteTodo",
+            url:"https://react-todo-app-wmcb.vercel.app/api/todos/deleteTodo",
             method:"POST",
             params: {todoId: id}
         })
@@ -101,7 +101,7 @@ function ViewTodos() {
         debugger
 
         const updateTodoStatus = await axios({
-            url:"http://localhost:8081/todos/updateStatus",
+            url:"https://react-todo-app-wmcb.vercel.app/api/todos/updateStatus",
             method:"POST",
             params: {todoId: id}
         })
@@ -143,7 +143,7 @@ function ViewTodos() {
             <table className="table" >
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        
                         <th>Title</th>
                         <th>Description</th>
                         <th>Status</th>
@@ -153,7 +153,6 @@ function ViewTodos() {
                 <tbody>
                     {todos&&todos.map((val, index) => (
                         <tr key={val._id}>
-                            <td>{val._id}</td>
                             <td>{val.todoTitle}</td>
                             <td>{val.todoDescription}</td>
                             <td>{val.todoStatus}</td>

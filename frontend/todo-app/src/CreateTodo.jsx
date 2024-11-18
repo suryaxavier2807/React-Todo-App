@@ -34,7 +34,7 @@ function CreateTodo() {
             async function getTodo() {
                 try {
                     const updateTodo = await axios({
-                        url: "http://localhost:8081/todos/getTodo",
+                        url: "https://react-todo-app-wmcb.vercel.app/api/todos/getTodo",
                         method: "POST",
                         params: { todoId: location.state.editedId },
 
@@ -107,7 +107,7 @@ function CreateTodo() {
         
             const connectBackend = await axios({
                 method: "POST",
-                url: "http://localhost:8081/todos/createTodoInDb",
+                url: "https://react-todo-app-wmcb.vercel.app/api/todos/createTodoInDb",
                 data: todos
             })
     
@@ -133,7 +133,7 @@ function CreateTodo() {
 
 
         const updateTodo = await axios({
-            url: "http://localhost:8081/todos/editTodo",
+            url: "https://react-todo-app-wmcb.vercel.app/api/todos/editTodo",
             method: "POST",
             params: { todoId: editedId },
             data: todos
